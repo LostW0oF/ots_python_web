@@ -18,3 +18,7 @@ posts = [
 def exibir_entradas():
     entradas = posts # Mock das postagens
     return render_template('exibir_entrada.html', entradas = entradas)
+
+@app.route('/layout')
+def layout():
+    return render_template('layout.html')

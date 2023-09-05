@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOG_IN_FLASK</title>
+</head>
+<body>
+    <div class="home">
+        <h1>LOST WOOF DESIGN BLOG</h1>
+
+        <div class="metanav">
+            {% if not session.logado %}
+                <a href="">login</a>
+            {% else %}
+                <a href="">logout</a>
+            {% endif %}
+        </div>
+
+        {% for mensagem in get_flashed_messages() %}
+            <div class="flash">
+                {{ mensagem }}
+            </div>
+        {% endfor %}
+        {% block corpo%}
+        {% endblock %}
+    </div>
+</body>
+</html>
